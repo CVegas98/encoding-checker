@@ -359,5 +359,6 @@ if ($resultspath.Length) {
 }
 
 if ([int]$script:noutf8files.count -gt 0 -or [int]$script:undeterminedfiles.count -gt 0) {
-    exit 1
+    $totalError = [int]$script:noutf8files.count + [int]$script:undeterminedfiles.count
+    exit $totalError
 }
